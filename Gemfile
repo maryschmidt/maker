@@ -30,6 +30,7 @@ gem 'paperclip'
 gem 'formtastic'
 gem 'flutie'
 gem 'bourbon'
+gem 'neat'
 gem 'airbrake'
 
 group :development do

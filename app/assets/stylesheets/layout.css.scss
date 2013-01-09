@@ -1,0 +1,64 @@
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #e1e1e1;
+  font-size: 14px;
+  font-family: $helvetica;
+}
+
+header {
+  text-align: right;
+  margin: 10px 0 10px 0;
+}
+
+#container {
+  margin: 0% 10% 0 10%;
+  vertical-align: middle;
+}
+
+a {
+  &:link {
+    text-decoration: none;
+  }
+  &:visited {
+    color: #000;
+  }
+  &:hover {
+    text-decoration: none;
+    font-weight: bold;
+}
+}
+
+.field {
+  margin-top: 15px;
+}
+
+.actions{
+  margin-top: 15px;
+  float: left;
+}
+
+.actions input {
+  @include button(#057abe);
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.button {
+  margin-top: 17px;
+  @include button(#eee);
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.actions, .button {
+  vertical-align: top;
+}
+
+#center_box {
+  background-color: #fff;
+  margin: 10% 20% 0% 20%;
+  padding: 30px;
+}
