@@ -1,0 +1,111 @@
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #e1e1e1;
+  font-size: 14px;
+  font-family: $helvetica;
+  color: #333;
+}
+
+header {
+  text-align: right;
+  margin: 10px 0 10px 0;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+#container {
+  margin: 0% 10% 0 10%;
+  vertical-align: middle;
+}
+
+a {
+  padding: 0.3em;
+  color: #333;
+  font-weight: bold;
+  &:link {
+    text-decoration: none;
+    color: #333;
+  }
+  &:visited {
+    color: #333;
+  }
+  &:hover {
+    text-decoration: none;
+    color: #057abe;
+}
+}
+
+.field {
+  margin-top: 15px;
+}
+
+.field input {
+  font-family: $helvetica;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.signup{
+  margin-top: 15px;
+}
+
+.signup input {
+  @include button(#057abe);
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.actions{
+  margin-top: 15px;
+  float: left;
+}
+
+.actions input {
+  @include button(#057abe);
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.button {
+  margin-top: 17px;
+  @include button(#eee);
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.button-blue {
+  margin-top: 17px;
+  margin-right: 15px;
+  @include button(#057abe);
+  font-size: 20px;
+  line-height: 20px;
+  float: left;
+}
+
+.button-blue a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.actions, .button {
+  vertical-align: top;
+}
+
+#center_box {
+  background-color: #fff;
+  margin: 10% 20% 0% 20%;
+  padding: 30px;
+  @include box-shadow(0 0 7px 3px hsla(0, 0%, 0%, 0.65));
+}
+
+#home_box {
+  background-color: #fff;
+  margin: 0%;
+  padding: 30px;
+}

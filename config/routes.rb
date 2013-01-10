@@ -10,6 +10,6 @@ Maker::Application.routes.draw do
 
   match '/sign_out' => 'sessions#destroy', :via => :delete
 
-  root :to => 'Clearance::Sessions#new'
+  root :to => 'high_voltage/pages#show', :id => 'home'
 
 end
