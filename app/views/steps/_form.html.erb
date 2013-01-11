@@ -1,0 +1,36 @@
+<%= form_for([current_user, current_project, @step]) do |f| %>
+  <% if @step.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@step.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @step.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %><br />
+  </div>
+  <div class="field">
+    <%= f.label :detail %>
+    <%= f.text_field :detail %><br />
+  </div>
+  <div class="field">
+    <%= f.label :tip %>
+    <%= f.text_field :tip %><br />
+  </div>
+  <div class="field">
+    <%= f.label "Image" %>
+    <%= f.file_field :pic %><br />
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <div class="button">
+    <%= link_to 'Back', user_project_path(current_user, current_project) %>
+  </div>
+<% end %>

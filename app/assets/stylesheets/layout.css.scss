@@ -74,14 +74,18 @@ a {
 
 .button {
   margin-top: 17px;
+  margin-left: 5px;
   @include button(#eee);
   font-size: 20px;
   line-height: 20px;
 }
 
+.button a {
+  color: #333;
+}
+
 .button-blue {
   margin-top: 17px;
-  margin-right: 15px;
   @include button(#057abe);
   font-size: 20px;
   line-height: 20px;
@@ -108,4 +112,10 @@ a {
   background-color: #fff;
   margin: 0%;
   padding: 30px;
+}
+
+section {
+  @include outer-container;
+  aside { @include span-columns(4); }
+  article { @include span-columns(8); }
 }
