@@ -1,0 +1,21 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<p>
+  <b>Name:</b>
+  <%= @step.name %>
+</p>
+
+<p>
+  <b>Detail:</b>
+  <%= @step.detail %>
+</p>
+
+<p>
+  <b>Tip:</b>
+  <%= @step.tip %>
+</p>
+
+<%= image_tag @step.pic.url(:medium) %>
+
+<%= link_to 'Edit', edit_user_project_step_path(@step) %> |
+<%= link_to 'Back', user_path(current_user) %>
