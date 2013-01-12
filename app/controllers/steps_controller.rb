@@ -18,8 +18,7 @@ class StepsController < ApplicationController
   def create
     @step = current_project.steps.new(params[:step])
     if @step.save
-      # redirect_to [current_user, current_project], notice: 'Step was successfully created.'
-      redirect_to [current_user, current_project, @step], notice: 'Step was successfully created.'
+      redirect_to [current_user, current_project], notice: 'Step was successfully created.'
     else
       render action: "new"
     end

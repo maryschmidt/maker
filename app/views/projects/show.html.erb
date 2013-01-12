@@ -12,11 +12,19 @@
 
 <b>Steps:</b><br />
 <% @project.steps.each do |step| %>
-  <%= image_tag step.pic.url(:medium) %>
-  <%= step.name %>
-  <%= step.detail %>
-  <%= step.tip %><br />
-<% end %>
+  <section>
+    <aside><%= image_tag step.pic.url(:medium) %></aside>
+    <article>
+      <div class="step-name"><%= step.name %></div>
+      <div class="step-detail"><%= step.detail %></div>
+      <div class="step-tip">
+        <% if step.tip != nil %>
+          Tip: <%= step.tip %>
+        <% end %>
+      </div>
+    </article>
+  </section>
+  <% end %>
 
 <%= link_to 'Add step', new_user_project_step_path(current_user, @project) %>
 <%= link_to 'Edit', edit_user_project_path(@project) %>

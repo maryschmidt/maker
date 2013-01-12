@@ -116,6 +116,26 @@ a {
 
 section {
   @include outer-container;
-  aside { @include span-columns(4); }
-  article { @include span-columns(8); }
+  margin: 0 0 0 0px;
+  aside { @include span-columns(2); }
+  article {
+    @include span-columns(4);
+    margin-top: 60px;
+  }
+}
+
+.step-name {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.step-detail {
+  font-size: 18px;
+  padding-bottom: 15px;
+}
+
+.step-tip {
+  font-size: 19px;
+  padding-left: 30px;
 }
