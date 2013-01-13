@@ -1,16 +1,11 @@
-<p>
-  <b>Title:</b>
-  <%= @project.title %>
-</p>
+<%= image_tag @project.image.url(:thumb) %><br />
 
+<h1><%= @project.title %></h1>
 <p>
-  <b>Description:</b>
   <%= @project.description %>
+  <%= link_to 'Edit Project', edit_user_project_path(@project) %>
 </p>
 
-<%= image_tag @project.image.url(:medium) %><br />
-
-<b>Steps:</b><br />
 <% @project.steps.each do |step| %>
   <section>
     <aside><%= image_tag step.pic.url(:medium) %></aside>
@@ -24,8 +19,9 @@
       </div>
     </article>
   </section>
-  <% end %>
+  <div class="buff"></div>
+<% end %>
 
-<%= link_to 'Add step', new_user_project_step_path(current_user, @project) %>
-<%= link_to 'Edit', edit_user_project_path(@project) %>
-<%= link_to 'Back', user_path(current_user) %>
+<div class="button-blue"><%= link_to 'Add step', new_user_project_step_path(current_user, @project) %></div>
+<div class="button"><%= link_to 'Back', user_path(current_user) %></div>
+<div class="buff"></div>
