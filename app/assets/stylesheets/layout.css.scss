@@ -116,11 +116,15 @@ a {
 
 section {
   @include outer-container;
+  @include box-shadow(0 0 7px 1px hsla(0, 0%, 0%, 0.65));
+  background-color: #fff;
+  position: relative;
   margin: 0 0 0 0px;
+  padding: 15px;
   aside { @include span-columns(2); }
   article {
     @include span-columns(4);
-    margin-top: 60px;
+    vertical-align: middle;
   }
 }
 
@@ -136,6 +140,17 @@ section {
 }
 
 .step-tip {
-  font-size: 19px;
+  font-size: 18px;
   padding-left: 30px;
+}
+
+.buff {
+  background-color: #e1e1e1;
+  height: 20px;
+  width: 100%;
+}
+
+#project-thumb {
+  float: left;
+  margin-right: 15px;
 }
