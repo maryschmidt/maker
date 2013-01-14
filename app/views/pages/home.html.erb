@@ -1,9 +1,13 @@
-<div id="home_box">
-  <h2>Hi there. What would you like to do?</h2>
-  <div class="button-blue">
-    <%= link_to 'Browse projects', new_user_path %>
+<div id="home-box-right">
+  <h2>What's your craft?</h2>
+
+  <div id="home-box-left">
+    <%= image_tag('/head.JPG', width: 300) %>
   </div>
-  <div class="button">
-    <%= link_to 'Become a maker', new_user_path %>
+
+  <h3>BOO YAH is a place to share your passions.  Show off your projects and see what friends are working on too.</h3>
+
+  <div class="button-blue">
+    <%= link_to 'Become a maker', sign_up_path %>
   </div>
 </div>
