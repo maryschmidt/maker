@@ -1,3 +1,19 @@
 <h1>Showing user.  Add user projects and goals here.</h1>
 
-<%= link_to 'New Project', new_user_project_path(@user) %>
+<div class="buff"></div>
+
+<div id="user-projects-box">
+  <div class="button-blue">
+    <%= link_to 'New Project', new_user_project_path(@user) %>
+  </div>
+</div>
+
+<div id="user-goals-box">
+  <h2>Goals</h2>
+  <% @user.goals.each do |goal| %>
+    <p><%= goal.goal %></p><br />
+  <% end %>
+  <div class="button-blue">
+    <%= link_to 'New Goal', new_user_goal_path(@user) %>
+  </div>
+</div>
