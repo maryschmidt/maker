@@ -1,0 +1,24 @@
+<%= form_for([current_user, @goal]) do |f| %>
+  <% if @goal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
+
+      <ul>
+      <% @goal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :goal %>
+    <%= f.text_field :goal %><br />
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <div class="button">
+    <%= link_to 'Back', user_path(current_user) %>
+  </div>
+<% end %>

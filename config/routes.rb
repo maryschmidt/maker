@@ -5,6 +5,7 @@ Maker::Application.routes.draw do
     :only => [:new, :create, :destroy]
 
   resources :users, only: [:index, :show] do
+    resources :goals
     resources :projects do
       resources :steps
     end
