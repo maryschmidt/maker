@@ -1,46 +1,50 @@
 class StepsController < ApplicationController
   def index
-    @steps = current_project.steps.all
+    @steps = current_project.steps
   end
 
   def show
-    @step = current_project.steps.find(params[:id])
+    @project = current_project
+    @step = current_step(@project)
   end
 
   def new
-    @step = current_project.steps.new
+    @project = current_project
+    @step = Step.new
   end
 
   def edit
-    @step = current_project.steps.find(params[:id])
+    @project = current_project
+    @step = current_step(@project)
   end
 
   def create
-    @step = current_project.steps.new(params[:step])
-    if @step.save
-      redirect_to [current_user, current_project], notice: 'Step was successfully created.'
-    else
-      render action: "new"
-    end
+    @project = current_project
+    @step = @project.steps.new(params[:step])
+    @step.save
+    redirect_to @project, notice: "Step was successfully created."
   end
 
   def update
-    @step = current_project.steps.find(params[:id])
-    if @step.update_attributes(params[:step])
-      redirect_to [current_user, current_project], notice: 'Step was successfully updated.'
-    else
-      render action: "edit"
-    end
+    @project = current_project
+    @step = current_step(@project)
+    @step.update_attributes(params[:step])
+    redirect_to @project, notice: "Step was successfully updated."
   end
 
   def destroy
-    @step = current_project.steps.find(params[:id])
+    @project = current_project
+    @step = current_step(@project)
     @step.destroy
-    redirect_to user_project_path(current_user, current_project)
+    redirect_to @project
   end
 
   private
   def current_project
-    @current_project = Project.find(params[:project_id])
+    Project.find(params[:project_id])
+  end
+
+  def current_step project
+    project.steps.find(params[:id])
   end
 end

@@ -1,41 +1,30 @@
 class GoalsController < ApplicationController
   def index
-    @goals = current_user.goals.all
-  end
-
-  def show
-    @goal = current_user.goals.find(params[:id])
+    @goals = current_user.goals
   end
 
   def new
-    @goal = current_user.goals.new
-  end
-
-  def edit
-    @goal = current_user.goals.find(params[:id])
+    @goal = Goal.new
   end
 
   def create
-    @goal = current_user.goals.new(params[:goal])
-    if @goal.save
-      redirect_to user_path(current_user), notice: 'Goal was successfully created.'
-    else
-      render action: "new"
-    end
-  end
-
-  def update
-    @goal = current_user.goals.find(params[:id])
-    if @goal.update_attributes(params[:goal])
-      redirect_to [current_user, @goal], notice: 'Goal was successfully updated.'
-    else
-      render action: "edit"
-    end
+    @goal = build_goal
+    @goal.save
+    redirect_to current_user
   end
 
   def destroy
-    @goal = current_user.goals.find(params[:id])
+    @goal = current_goal
     @goal.destroy
-    redirect_to user_path(current_user)
+    redirect_to current_user
+  end
+
+  private
+  def current_goal
+    current_user.goals.find(params[:id])
+  end
+
+  def build_goal
+    current_user.goals.new(params[:goal])
   end
 end
