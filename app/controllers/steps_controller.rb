@@ -38,4 +38,9 @@ class StepsController < ApplicationController
     @step.destroy
     redirect_to user_project_path(current_user, current_project)
   end
+
+  private
+  def current_project
+    @current_project = Project.find(params[:project_id])
+  end
 end
