@@ -3,7 +3,7 @@
 <h1><%= @project.title %></h1>
 <p>
   <%= @project.description %>
-  <%= link_to 'Edit Project', edit_user_project_path(@project) %>
+  <%= link_to 'Edit Project', edit_project_path(@project) %>
 </p>
 
 <% @project.steps.each do |step| %>
@@ -24,9 +24,9 @@
 <% end %>
 
 <div class="button-blue">
-  <%= link_to 'Add step', new_user_project_step_path(current_user, @project) %>
+  <%= link_to 'Add step', new_project_step_path(@project) %>
 </div>
 <div class="button">
-  <%= link_to 'Back', user_path(current_user) %>
+  <%= link_to 'Back', projects_path %>
 </div>
 <div class="buff"></div>

@@ -4,11 +4,10 @@ Maker::Application.routes.draw do
     :controller => 'sessions',
     :only => [:new, :create, :destroy]
 
-  resources :users, only: [:index, :show] do
-    resources :goals
-    resources :projects do
-      resources :steps
-    end
+  resources :users, only: [:index, :show]
+  resources :goals, only: [:index, :new, :create, :destroy]
+  resources :projects do
+    resources :steps
   end
 
   match '/sign_out' => 'sessions#destroy', :via => :delete

@@ -131,15 +131,14 @@ h2 {
 section {
   @include outer-container;
   @include box-shadow(0 0 7px 1px hsla(0, 0%, 0%, 0.65));
+  @include fill-parent;
+  width: 100%;
   background-color: #fff;
   position: relative;
   margin: 0 0 0 0px;
   padding: 15px;
   aside { @include span-columns(2); }
-  article {
-    @include span-columns(4);
-    vertical-align: middle;
-  }
+  article { @include span-columns(4); }
 }
 
 .step-name {
@@ -171,14 +170,14 @@ section {
 
 #user-projects-box {
   background-color: #fff;
-  width: 60%;
+  width: 62%;
   float: left;
   padding: 15px;
 }
 
 #user-goals-box {
   background-color: #fff;
-  width: 35%;
+  width: 37%;
   float: right;
   padding: 15px;
 }

@@ -4,16 +4,17 @@
 
 <div id="user-projects-box">
   <div class="button-blue">
-    <%= link_to 'New Project', new_user_project_path(@user) %>
+    <%= link_to "New Project", new_project_path %>
   </div>
 </div>
 
 <div id="user-goals-box">
   <h2>Goals</h2>
-  <% @user.goals.each do |goal| %>
+  <% current_user.goals.each do |goal| %>
     <p><%= goal.goal %></p><br />
   <% end %>
+
   <div class="button-blue">
-    <%= link_to 'New Goal', new_user_goal_path(@user) %>
+    <%= link_to "New Goal", new_goal_path %>
   </div>
 </div>
