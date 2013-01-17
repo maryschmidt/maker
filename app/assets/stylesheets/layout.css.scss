@@ -97,6 +97,13 @@ a {
   color: #fff;
 }
 
+.button-small {
+  @include button(#057abe);
+  font-size: 14px;
+  line-height: 14px;
+  float: left;
+}
+
 .actions, .button {
   vertical-align: top;
 }

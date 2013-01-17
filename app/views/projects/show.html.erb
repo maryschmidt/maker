@@ -6,6 +6,9 @@
   <%= link_to 'Edit Project', edit_project_path(@project) %>
 </p>
 
+<%= render "follow" %>
+<div class="buff"></div>
+
 <% @project.steps.each do |step| %>
   <div class="buff"></div>
   <section>

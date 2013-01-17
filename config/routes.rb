@@ -9,6 +9,7 @@ Maker::Application.routes.draw do
   resources :projects do
     resources :steps
   end
+  resources :relationships, only: [:create, :destroy]
 
   match '/sign_out' => 'sessions#destroy', :via => :delete
 
