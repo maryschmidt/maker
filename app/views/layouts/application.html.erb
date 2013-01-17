@@ -4,23 +4,24 @@
   <meta charset="utf-8" />
   <meta name="ROBOTS" content="NOODP" />
   <title><%= page_title %></title>
-  <%= stylesheet_link_tag :application, :media => 'all' %>
+  <%= stylesheet_link_tag :application, :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= body_class %>">
+<body class="body_class">
   <div id="container">
     <header>
-      <% if signed_in? -%>
+      <% if signed_in? %>
         <%= link_to "Dashboard", user_path(current_user) %>
+        <%= link_to "All Projects", projects_path %>
         <%= link_to "Sign out", sign_out_path, :method => :delete %>
       <% else -%>
         <%= link_to "Sign in", sign_in_path %>
         <%= link_to "Sign up", sign_up_path %>
       <% end -%>
     </header>
-    <%= render 'flashes' -%>
+    <%= render "flashes" %>
     <%= yield %>
-    <%= render 'javascript' %>
+    <%= render "javascript" %>
   </div>
 </body>
 </html>

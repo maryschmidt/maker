@@ -6,6 +6,14 @@
   <%= link_to 'Edit Project', edit_project_path(@project) %>
 </p>
 
+<% if current_user.following?(@project.user) %>
+  <%= render "unfollow" %>
+<% else %>
+  <%= render "follow" %>
+<% end %>
+
+<div class="buff"></div>
+
 <% @project.steps.each do |step| %>
   <div class="buff"></div>
   <section>
