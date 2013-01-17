@@ -3,6 +3,10 @@
 <div class="buff"></div>
 
 <div id="user-projects-box">
+  <% current_user.followed_projects.order("updated_at DESC").limit(10).each do |proj| %>
+    <%= link_to image_tag(proj.image.url(:thumb)), proj %>
+    <br />
+  <% end %>
   <div class="button-blue">
     <%= link_to "New Project", new_project_path %>
   </div>
