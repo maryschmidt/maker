@@ -36,10 +36,10 @@ class ProjectsController < ApplicationController
 
   private
   def current_project
-    current_user.projects.find(params[:id])
+    Project.find(params[:id])
   end
 
   def build_project
-    current_user.projects.new(params[:project])
+    Project.new(params[:project])
   end
 end
