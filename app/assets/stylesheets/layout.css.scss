@@ -17,6 +17,13 @@ h1, h2, h3 {
   color: #333;
 }
 
+h1 {
+}
+
+h3 {
+  font-style: italic;
+}
+
 #container {
   margin: 0% 10% 0 10%;
   vertical-align: middle;
@@ -135,16 +142,35 @@ h2 {
   margin-bottom: 30px;
 }
 
+maker-info {
+  width: 17%;
+  float: left;
+  height: 100%;
+  font-weight: bold;
+  line-height: 18px;
+  .avatar {
+    float: left;
+    padding-right: 5px;
+  }
+}
+
+project-info { }
+
+project-steps { }
+
+maker-info, project-info {
+  vertical-align: top;
+}
+
 section {
   @include outer-container;
-  @include box-shadow(0 0 7px 1px hsla(0, 0%, 0%, 0.65));
-  @include fill-parent;
-  width: 100%;
+  @include box-shadow(0 0 7px .5px hsla(0, 0%, 0%, 0.65));
   background-color: #fff;
+  width: 68%;
   position: relative;
-  margin: 0 0 0 0px;
+  margin: 0 15 0 15%;
   padding: 15px;
-  aside { @include span-columns(2); }
+  aside { @include span-columns(3); }
   article { @include span-columns(4); }
 }
 
