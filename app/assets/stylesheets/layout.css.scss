@@ -145,7 +145,6 @@ h2 {
 maker-info {
   width: 17%;
   float: left;
-  height: 100%;
   font-weight: bold;
   line-height: 18px;
   .avatar {
@@ -166,34 +165,34 @@ section {
   @include outer-container;
   @include box-shadow(0 0 7px .5px hsla(0, 0%, 0%, 0.65));
   background-color: #fff;
-  width: 68%;
+  width: 55%;
   position: relative;
-  margin: 0 15 0 15%;
+  margin: 0 14 0 14%;
   padding: 15px;
   aside { @include span-columns(3); }
   article { @include span-columns(4); }
 }
 
 .step-name {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   padding-bottom: 15px;
 }
 
 .step-detail {
-  font-size: 18px;
+  font-size: 14px;
   padding-bottom: 15px;
 }
 
 .step-tip {
-  font-size: 18px;
+  font-size: 14px;
   padding-left: 30px;
+  font-style: italic;
 }
 
 .buff {
   background-color: #e1e1e1;
   height: 20px;
-  width: 100%;
 }
 
 #project-thumb {
@@ -202,15 +201,17 @@ section {
 }
 
 #user-projects-box {
+  @include box-shadow(0 0 7px .5px hsla(0, 0%, 0%, 0.65));
   background-color: #fff;
-  width: 62%;
+  width: 68%;
   float: left;
   padding: 15px;
 }
 
 #user-goals-box {
+  @include box-shadow(0 0 7px .5px hsla(0, 0%, 0%, 0.65));
   background-color: #fff;
-  width: 37%;
+  width: 30%;
   float: right;
   padding: 15px;
 }
