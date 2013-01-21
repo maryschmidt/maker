@@ -3,4 +3,7 @@ class Project < ActiveRecord::Base
   belongs_to :user
   has_many :steps
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  searchable do
+    text :title, :description
+  end
 end
