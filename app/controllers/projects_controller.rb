@@ -1,11 +1,12 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.order("created_at DESC").page params[:page]
+    @projects = search.results
   end
 
   def show
     @project = current_project
     @steps = @project.steps
+    @user = @project.user
   end
 
   def new
@@ -41,5 +42,12 @@ class ProjectsController < ApplicationController
 
   def build_project
     Project.new(params[:project])
+  end
+
+  def search
+    Project.search do
+      fulltext params[:search]
+      paginate page: params[:page]
+    end
   end
 end

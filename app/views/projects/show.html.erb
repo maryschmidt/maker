@@ -10,7 +10,7 @@
 <project-info>
 <h1><%= @project.title %></h1>
 <h3><%= @project.description %></h3>
-<%= link_to "Edit Project", edit_project_path(@project) %></div>
+<%= link_to "Edit Project", edit_project_path(@project) %>
 
 <div class="buff"></div>
 <div class="buff"></div>
@@ -32,11 +32,10 @@
   <div class="buff"></div>
 <% end %>
 
-<!-- <div class="button-blue"> -->
-<!--   <%= link_to 'Add step', new_project_step_path(@project) %> -->
-<!-- </div> -->
-<!-- <div class="button"> -->
-<!--   <%= link_to 'Back', projects_path %> -->
-<!-- </div> -->
-<!-- <div class="buff"></div> -->
+<% if @user == current_user %>
+  <div class="button-blue">
+    <%= link_to 'Add step', new_project_step_path(@project) %>
+  </div>
+  <div class="buff"></div>
+<% end %>
 </project-info>
