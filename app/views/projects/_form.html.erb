@@ -1,32 +1,27 @@
-<%= form_for @project do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+<% if form.object.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(form.object.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
-      <% @project.errors.full_messages.each do |msg| %>
+    <ul>
+      <% form.object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %><br />
-  </div>
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %><br />
-  </div>
-  <div class="field">
-    <%= f.label "Image" %>
-    <%= f.file_field :image %><br />
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  <div class="button">
-    <%= link_to 'Back', projects_path %>
+    </ul>
   </div>
 <% end %>
+
+<div class="field">
+  <%= form.label :title %>
+  <%= form.text_field :title %><br />
+</div>
+<div class="field">
+  <%= form.label :description %>
+  <%= form.text_field :description %><br />
+</div>
+<div class="field">
+  <%= form.label "Image" %>
+  <%= form.file_field :image %><br />
+</div>
+<div class="actions">
+  <%= form.submit %>
+</div>
