@@ -2,7 +2,7 @@
 
 <div class="buff"></div>
 
-<div id="user-projects-box">
+<div class="user-projects-box">
   <% current_user.followed_projects.order("updated_at DESC").limit(10).each do |proj| %>
     <%= link_to image_tag(proj.image.url(:thumb)), proj %>
     <br />
@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<div id="user-goals-box">
+<div class="user-goals-box">
   <h2>Goals</h2>
   <% current_user.goals.each do |goal| %>
     <p><%= goal.goal %></p><br />
