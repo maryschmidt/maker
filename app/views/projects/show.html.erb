@@ -1,9 +1,15 @@
 <maker-info>
 <div class="avatar"><%= image_tag avatar_url(@project.user) %></div>
-<% if current_user.following?(@project.user) %>
-  <%= render "unfollow" %>
+<% if current_user.following?(@user) %>
+  <%= form_for(current_user.relationships.find_by_followed_id(@user), method: :delete ) do |f| %>
+    <%= f.submit "Unfollow", class: "button-small" %>
+  <% end %>
 <% else %>
-  <%= render "follow" %>
+  <%= form_for(current_user.relationships.build(followed_id: @user.id)) do |f| %>
+    <%= f.hidden_field :followed_id %>
+    <%= @user.name %><br />
+    <%= f.submit "Follow", class: "button-small" %>
+  <% end %>
 <% end %>
 </maker-info>
 

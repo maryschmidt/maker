@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
   end
 
   def build_project
-    Project.new(params[:project])
+    current_user.projects.new(params[:project])
   end
 
   def search

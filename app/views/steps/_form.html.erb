@@ -1,10 +1,9 @@
-<%= form_for([@project, @step]) do |f| %>
-  <% if @step.errors.any? %>
+  <% if form.object.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@step.errors.count, "error") %> prohibited this project from being saved:</h2>
+      <h2><%= pluralize(form.object.errors.count, "error") %> prohibited this project from being saved:</h2>
 
       <ul>
-      <% @step.errors.full_messages.each do |msg| %>
+      <% form.object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -12,25 +11,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %><br />
+    <%= form.label :name %>
+    <%= form.text_field :name %><br />
   </div>
   <div class="field">
-    <%= f.label :detail %>
-    <%= f.text_field :detail %><br />
+    <%= form.label :detail %>
+    <%= form.text_field :detail %><br />
   </div>
   <div class="field">
-    <%= f.label :tip %>
-    <%= f.text_field :tip %><br />
+    <%= form.label :tip %>
+    <%= form.text_field :tip %><br />
   </div>
   <div class="field">
-    <%= f.label "Image" %>
-    <%= f.file_field :pic %><br />
+    <%= form.label "Image" %>
+    <%= form.file_field :pic %><br />
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= form.submit %>
   </div>
   <div class="button">
     <%= link_to "Back", project_path(@project) %>
   </div>
-<% end %>

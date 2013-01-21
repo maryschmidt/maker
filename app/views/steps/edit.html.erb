@@ -1,5 +1,6 @@
-<h1>Editing step</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', project_path(@project) %>
+<div id="center_box">
+  <h1>Editing step</h1>
+  <%= form_for([@project, @step]) do |f| %>
+    <%= render f %>
+  <% end %>
+</div>

@@ -1,4 +1,9 @@
 <div id="center_box">
   <h1>New Project</h1>
-  <%= render 'form' %>
+  <%= form_for @project do |f| %>
+    <%= render f %>
+  <% end %>
+  <div class="button">
+    <%= link_to "Back", projects_path %>
+  </div>
 </div>
