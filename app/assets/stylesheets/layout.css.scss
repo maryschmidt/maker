@@ -1,11 +1,16 @@
+$white: #fff;
+$blue: #057abe;
+$text: #333;
+$background-color: #e1e1e1;
+
 body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #e1e1e1;
+  background-color: $background-color;
   font-size: 14px;
   font-family: $helvetica;
-  color: #333;
+  color: $text;
 }
 
 header {
@@ -14,36 +19,33 @@ header {
 }
 
 h1, h2, h3 {
-  color: #333;
-}
-
-h1 {
+  color: $text;
 }
 
 h3 {
   font-style: italic;
 }
 
-#container {
+.container {
   margin: 0% 10% 0 10%;
   vertical-align: middle;
 }
 
 a {
   padding: 0.3em;
-  color: #333;
+  color: $text;
   font-weight: bold;
   &:link {
     text-decoration: none;
-    color: #333;
+    color: $text;
   }
   &:visited {
-    color: #333;
+    color: $text;
   }
   &:hover {
     text-decoration: none;
-    color: #057abe;
-}
+    color: $blue;
+  }
 }
 
 .field {
@@ -61,7 +63,7 @@ a {
 }
 
 .signup input {
-  @include button(#057abe);
+  @include button($blue);
   text-decoration: none;
   font-size: 20px;
   line-height: 20px;
@@ -73,7 +75,7 @@ a {
 }
 
 .actions input {
-  @include button(#057abe);
+  @include button($blue);
   text-decoration: none;
   font-size: 20px;
   line-height: 20px;
@@ -93,7 +95,7 @@ a {
 
 .button-blue {
   margin-top: 17px;
-  @include button(#057abe);
+  @include button($blue);
   font-size: 20px;
   line-height: 20px;
   float: left;
@@ -101,11 +103,11 @@ a {
 
 .button-blue a {
   text-decoration: none;
-  color: #fff;
+  color: $white;
 }
 
 .button-small {
-  @include button(#057abe);
+  @include button($blue);
   font-size: 14px;
   line-height: 14px;
   float: left;
@@ -115,23 +117,22 @@ a {
   vertical-align: top;
 }
 
-#center_box {
-  background-color: #fff;
+.center_box {
+  background-color: $white;
   margin: 10% 20% 0% 20%;
   padding: 30px;
   @include box-shadow(0 0 7px 3px hsla(0, 0%, 0%, 0.65));
 }
 
-#home-box-left {
-  // background-color: #fff;
+.home-box-left {
   margin: 0%;
   width: 300px;
   margin-right: 30px;
   float: left;
  }
 
-#home-box-right {
-  background-color: #fff;
+.home-box-right {
+  background-color: $white;
   margin: 0%;
   width: 100%;
   min-height: 350px;
@@ -142,7 +143,7 @@ h2 {
   margin-bottom: 30px;
 }
 
-maker-info {
+.maker-info {
   width: 17%;
   float: left;
   font-weight: bold;
@@ -153,18 +154,10 @@ maker-info {
   }
 }
 
-project-info { }
-
-project-steps { }
-
-maker-info, project-info {
-  vertical-align: top;
-}
-
 section {
   @include outer-container;
   @include box-shadow(0 0 7px .5px hsla(0, 0%, 0%, 0.65));
-  background-color: #fff;
+  background-color: $white;
   width: 55%;
   position: relative;
   margin: 0 14 0 14%;
@@ -191,26 +184,21 @@ section {
 }
 
 .buff {
-  background-color: #e1e1e1;
+  background-color: $background-color;
   height: 20px;
 }
 
-#project-thumb {
-  float: left;
-  margin-right: 15px;
-}
-
-#user-projects-box {
+.user-projects-box {
   @include box-shadow(0 0 7px .5px hsla(0, 0%, 0%, 0.65));
-  background-color: #fff;
+  background-color: $white;
   width: 68%;
   float: left;
   padding: 15px;
 }
 
-#user-goals-box {
+.user-goals-box {
   @include box-shadow(0 0 7px .5px hsla(0, 0%, 0%, 0.65));
-  background-color: #fff;
+  background-color: $white;
   width: 30%;
   float: right;
   padding: 15px;
