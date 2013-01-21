@@ -32,6 +32,7 @@ gem 'flutie'
 gem 'bourbon'
 gem 'neat'
 gem 'airbrake'
+gem 'kaminari'
 
 group :development do
   gem 'foreman'
