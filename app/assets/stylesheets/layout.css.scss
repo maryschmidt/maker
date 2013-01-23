@@ -1,7 +1,7 @@
 $background-color: #fff;
 $blue: #057abe;
 $text: #333;
-$gray: #e1e1e1;
+$gray: #f5f5f5;
 
 body {
   min-height: 100%;
@@ -158,9 +158,9 @@ section {
   @include outer-container;
   @include box-shadow(0 0 7px .5px hsla(0, 0%, 0%, 0.65));
   background-color: $gray;
-  width: 55%;
+  width: 75%;
   position: relative;
-  margin: 0 14 0 14%;
+  margin: 0 4 0 4%;
   padding: 15px;
   aside { @include span-columns(3); }
   article { @include span-columns(4); }
