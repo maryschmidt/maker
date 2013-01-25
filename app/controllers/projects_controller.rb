@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = current_project
+    @comment = Comment.new
     @steps = @project.steps
     @user = @project.user
   end

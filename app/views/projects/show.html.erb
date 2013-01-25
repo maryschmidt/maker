@@ -43,3 +43,9 @@
   </div>
   <div class="buff"></div>
 <% end %>
+<%= form_for([@project, @comment]) do |form| %>
+  <%= form.text_area :body %>
+  <%= form.submit "Comment" %>
+<% end %>
+
+<%= render @project.comments %>

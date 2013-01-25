@@ -11,8 +11,8 @@
 /db/*.sqlite3
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
+log
+tmp
 !.keep
 *.DS_Store
 *.swp
@@ -23,3 +23,4 @@ public/system
 rerun.txt
 tags
 vendor/bundler_gems
+solr

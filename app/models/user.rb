@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
     dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
   has_many :followed_projects, through: :followed_users, source: :projects
+  has_many :comments
 
   def feed
   end
