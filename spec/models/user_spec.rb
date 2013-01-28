@@ -17,4 +17,10 @@ describe User do
     follower.should_not be_following(followed_user)
   end
 
+  it "should not be able to #follow itself" do
+    user = create(:user)
+    user.relationships.create(followed_id: user.id)
+    user.should_not be_following(user)
+  end
+
 end
