@@ -3,23 +3,17 @@ require "spec_helper"
 feature "Dashboard" do
   scenario "Showing followed projects" do
     project = DashboardHarness.new
-    sign_out @followed_user
     project.populate_dashboard
     expect(project).to be_visible
-  end
-
-  scenario "Not showing users own projects" do
-    project = DashboardHarness.new
-    click_link "Dashboard"
-    expect(project).to_not be_visible
   end
 
   class DashboardHarness < TestHarness
 
     def initialize
-      @followed_user = create(:user)
-      sign_in @followed_user
+      followed_user = create(:user)
+      sign_in followed_user
       @project = create(:project)
+      sign_out followed_user
     end
 
     def populate_dashboard
