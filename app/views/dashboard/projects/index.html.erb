@@ -1,0 +1,25 @@
+<h1>Das Dashboard</h1>
+
+<div class="buff"></div>
+
+<div class="user-projects-box">
+  <% @projects.each do |project| %>
+    <%= project.title %>
+    <%= link_to image_tag(project.image.url(:thumb)), project %>
+    <br />
+  <% end %>
+  <div class="button-blue">
+    <%= link_to "New Project", new_project_path %>
+  </div>
+</div>
+
+<div class="user-goals-box">
+  <h2>Goals</h2>
+  <% current_user.goals.each do |goal| %>
+    <p><%= goal.goal %></p><br />
+  <% end %>
+
+  <div class="button-blue">
+    <%= link_to "New Goal", new_goal_path %>
+  </div>
+</div>

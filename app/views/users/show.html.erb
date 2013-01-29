@@ -1,24 +1,14 @@
-<h1>Showing user.  Add user projects and goals here.</h1>
+<h1>HERE'S YOUR USER!</h1>
 
-<div class="buff"></div>
-
-<div class="user-projects-box">
-  <% current_user.followed_projects.order("updated_at DESC").limit(10).each do |proj| %>
-    <%= link_to image_tag(proj.image.url(:thumb)), proj %>
-    <br />
-  <% end %>
-  <div class="button-blue">
-    <%= link_to "New Project", new_project_path %>
-  </div>
+<div>
+  <%= @user.name.capitalize %><br />
+  <%= "Following: #{@user.followed_users.count}" %>
+  <%= "Followers: #{@user.followers.count}" %>
 </div>
 
-<div class="user-goals-box">
-  <h2>Goals</h2>
-  <% current_user.goals.each do |goal| %>
-    <p><%= goal.goal %></p><br />
+<div>
+  <h2>Projects</h2>
+  <% @user.projects.each do |project| %>
+    <%= link_to image_tag(project.image.url(:thumb)), project %>
   <% end %>
-
-  <div class="button-blue">
-    <%= link_to "New Goal", new_goal_path %>
-  </div>
 </div>

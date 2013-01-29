@@ -7,7 +7,7 @@ class Project < ActiveRecord::Base
 
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
-  searchable do
-    text :title, :description
+  def self.recent(count)
+    order("updated_at DESC").limit(count)
   end
 end

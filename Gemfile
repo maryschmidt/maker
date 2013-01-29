@@ -33,8 +33,6 @@ gem 'bourbon'
 gem 'neat'
 gem 'airbrake'
 gem 'kaminari'
-gem 'sunspot_rails'
-gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
 
 group :development do
   gem 'foreman'
