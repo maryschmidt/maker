@@ -2,8 +2,8 @@
 
 <div>
   <%= @user.name.capitalize %><br />
-  <%= "Following: " + @user.followed_users.count.to_s %>
-  <%= "Followers: " + @user.followers.count.to_s %>
+  <%= "Following: #{@user.followed_users.count}" %>
+  <%= "Followers: #{@user.followers.count}" %>
 </div>
 
 <div>

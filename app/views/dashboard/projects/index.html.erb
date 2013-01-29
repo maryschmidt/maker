@@ -3,9 +3,9 @@
 <div class="buff"></div>
 
 <div class="user-projects-box">
-  <% @projects.limit(10).each do |proj| %>
-    <%= proj.title %>
-    <%= link_to image_tag(proj.image.url(:thumb)), proj %>
+  <% @projects.each do |project| %>
+    <%= project.title %>
+    <%= link_to image_tag(project.image.url(:thumb)), project %>
     <br />
   <% end %>
   <div class="button-blue">

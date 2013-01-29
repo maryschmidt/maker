@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
   def index
-    # @projects = search.results
     @projects = Project.all
   end
 
@@ -45,11 +44,4 @@ class ProjectsController < ApplicationController
   def build_project
     current_user.projects.new(params[:project])
   end
-
-  # def search
-  #   Project.search do
-  #     fulltext params[:search]
-  #     paginate page: params[:page]
-  #   end
-  # end
 end
