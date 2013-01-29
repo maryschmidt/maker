@@ -16,7 +16,8 @@ feature "Project comments" do
     end
 
     def make
-      sign_in
+      user ||= create(:user)
+      sign_in user
       visit project_path(@project)
       fill_in "comment_body", with: @text
       click_button "Comment"
