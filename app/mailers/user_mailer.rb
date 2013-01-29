@@ -6,4 +6,10 @@ class UserMailer < ActionMailer::Base
     @url  = sign_in_url
     mail(to: user.email, subject: "Welcome to My Awesome Site")
   end
+
+  def follow_email(user, follower)
+    @user = user
+    @follower = follower
+    mail(to: user.email, subject: "You've got a follower!")
+  end
 end
