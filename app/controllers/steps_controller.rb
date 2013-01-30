@@ -22,7 +22,11 @@ class StepsController < ApplicationController
     @project = current_project
     @step = @project.steps.new(params[:step])
     @step.save
-    redirect_to @project, notice: "Step was successfully created."
+    if @step.save
+      redirect_to @project, notice: "Step was successfully created."
+    else
+      render "new"
+    end
   end
 
   def update

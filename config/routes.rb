@@ -18,6 +18,6 @@ Maker::Application.routes.draw do
 
   delete "sign_out" => "sessions#destroy"
 
-  root to: "high_voltage/pages#show", id: "home"
+  root to: "home/projects#index"
 
 end

@@ -1,25 +1,20 @@
-<h1>Das Dashboard</h1>
-
 <div class="buff"></div>
 
-<div class="user-projects-box">
-  <% @projects.each do |project| %>
-    <%= project.title %>
-    <%= link_to image_tag(project.image.url(:thumb)), project %>
-    <br />
-  <% end %>
-  <div class="button-blue">
-    <%= link_to "New Project", new_project_path %>
-  </div>
+<div class="maker-info">
+  <%= current_user.name.capitalize %><br />
+  <%= "Following: #{current_user.followed_users.count}" %>
+  <%= "Followers: #{current_user.followers.count}" %>
+  <div class="buff"></div>
+  <div class="button-small"><%= link_to 'New Project', new_project_path %></div>
 </div>
 
-<div class="user-goals-box">
-  <h2>Goals</h2>
-  <% current_user.goals.each do |goal| %>
-    <p><%= goal.goal %></p><br />
+<div class="user-projects-box">
+  <h1>Projects you're watching</h1>
+  <% @projects.each do |project| %>
+    <div class="project-image-thumb">
+      <% unless project.image_file_size == nil %>
+        <%= link_to image_tag(project.image.url(:thumb)), project %>
+      <% end %>
+    </div>
   <% end %>
-
-  <div class="button-blue">
-    <%= link_to "New Goal", new_goal_path %>
-  </div>
 </div>

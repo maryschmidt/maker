@@ -1,0 +1,9 @@
+<div class="title">
+  <%= link_to "Look what the world's making!", projects_path %>
+</div>
+
+<% @projects.each do |project| %>
+  <% unless project.image_file_size == nil %>
+    <%= link_to image_tag(project.image.url(:small)), project %>
+  <% end %>
+<% end %>
