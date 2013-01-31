@@ -12,25 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :goal %>
+    <%= f.label "What would you like to accomplish?" %>
     <%= f.text_field :goal %><br />
   </div>
   <div class="field">
     <div class="field-float">
-      <%= f.label :remind_me %>
+      <%= f.label "Harass me till I get it done!" %>
     </div>
     <%= f.check_box :remind_me %><br />
-  </div>
-  <div class="field">
-    <div class="field-float">
-      <%= f.label "Completed" %>
-    </div>
-    <%= f.check_box :status %><br />
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
   <div class="button">
-    <%= link_to 'Back', current_user %>
+    <%= link_to 'Back', dashboard_projects_path %>
   </div>
 <% end %>

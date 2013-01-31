@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125152755) do
+ActiveRecord::Schema.define(:version => 20130131182812) do
 
   create_table "comments", :force => true do |t|
     t.string   "body",       :null => false
@@ -26,9 +26,12 @@ ActiveRecord::Schema.define(:version => 20130125152755) do
 
   create_table "goals", :force => true do |t|
     t.string   "goal"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.integer  "user_id"
+    t.boolean  "remind_me",  :default => false
+    t.string   "frequency"
+    t.boolean  "status",     :default => false
   end
 
   add_index "goals", ["user_id"], :name => "index_goals_on_user_id"

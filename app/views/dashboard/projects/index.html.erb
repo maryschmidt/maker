@@ -1,11 +1,17 @@
 <div class="buff"></div>
 
 <div class="maker-info">
-  <%= current_user.name.upcase %><br />
+  <h3><%= current_user.name.upcase %></h3><br />
   <%= "Following: #{current_user.followed_users.count}" %>
   <%= "Followers: #{current_user.followers.count}" %>
   <div class="buff"></div>
-  <div class="button-small"><%= link_to 'New Project', new_project_path %></div>
+  <div class="button-small"><%= link_to "New Project", new_project_path %></div>
+  <div class="goals">
+    <% current_user.goals.unmet.each do |goal| %>
+      <%= link_to goal.goal, edit_goal_path(goal) %><br />
+    <% end %>
+  </div>
+  <div class="button-small"><%= link_to "New Goal", new_goal_path %></div>
 </div>
 
 <div class="user-projects-box">
