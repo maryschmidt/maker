@@ -4,5 +4,5 @@ class Step < ActiveRecord::Base
   attr_accessible :name, :detail, :tip, :pic
   validates :name, presence: true
 
-  has_attached_file :pic, styles: { medium: "300x300>", thumb: "100x100>" }
+  has_attached_file :pic, styles: { medium: "300x300>", small: "200x200>", thumb: "100x100>" }
 end
