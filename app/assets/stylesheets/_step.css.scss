@@ -2,12 +2,13 @@
   padding-left: 15px;
   width: 75%;
   float: left;
+  background-color: $gray;
 }
 
 .step {
   width: 100%;
   min-height: 200px;
-  background-color: $white;
+  background-color: $gray;
   .step-pic {
     float: left;
     margin-right: 30px;
