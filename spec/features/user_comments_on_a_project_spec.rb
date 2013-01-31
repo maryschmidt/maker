@@ -25,7 +25,7 @@ feature "Project comments" do
 
     def visible?
       within ".comment" do
-        page.has_text?(@text) && page.has_text?(@user.name)
+        page.has_text?(@text)
       end
     end
   end

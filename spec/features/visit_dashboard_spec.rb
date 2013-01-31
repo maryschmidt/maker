@@ -26,7 +26,7 @@ feature "Dashboard" do
 
     def visible?
       within ".user-projects-box" do
-        page.has_text?(@project.title)
+        page.has_text?("You're watching 1")
       end
     end
   end

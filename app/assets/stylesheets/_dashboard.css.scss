@@ -1,8 +1,21 @@
 .user-projects-box {
-  background-color: $background-color;
-  padding: 15px;
+  padding-left: 15px;
   width: 75%;
   float: left;
+}
+
+.maker-info {
+  width: 25%;
+  float: left;
+  line-height: 18px;
+  .avatar {
+    float: left;
+    padding-right: 5px;
+  }
+}
+
+.user-projects-box, .maker-info {
+  vertical-align: top;
 }
 
 .project-image-medium {

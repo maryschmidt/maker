@@ -1,14 +1,16 @@
-<h1>HERE'S YOUR USER!</h1>
-
-<div>
-  <%= @user.name.capitalize %><br />
-  <%= "Following: #{@user.followed_users.count}" %>
-  <%= "Followers: #{@user.followers.count}" %>
+<div class="user-info">
+  <div class="avatar"><%= image_tag avatar_url(@user) %></div>
+  <h2><%= @user.name.upcase %></h2>
+  <div>
+    <%= "Following: #{@user.followed_users.count}" %><br />
+    <%= "Followers: #{@user.followers.count}" %>
+  </div>
 </div>
 
-<div>
-  <h2>Projects</h2>
+<div class="user-projects">
   <% @user.projects.each do |project| %>
-    <%= link_to image_tag(project.image.url(:thumb)), project %>
+    <% unless project.image_file_size == nil %>
+      <%= link_to image_tag(project.image.url(:small)), project %>
+    <% end %>
   <% end %>
 </div>
