@@ -1,9 +1,14 @@
-You look great in Suspenders
+Maker
 ============================
 
-Use the following guides for getting things done, programming well, and
-programming in style.
+# What exactly is this?
 
-* [Protocol](http://github.com/thoughtbot/guides/blob/master/protocol)
-* [Best Practices](http://github.com/thoughtbot/guides/blob/master/best-practices)
-* [Style](http://github.com/thoughtbot/guides/blob/master/style)
+This is a place for people who make cool things to share what they do, how they do it, and learn from other fantastic human beings.
+
+# Why are you making this?
+
+Because I can.
+
+I'm using this project as a breakable toy, and I've learned a ton about Rails in making it.  I'm always adding functionality to the site, but feel free to borrow any pieces you'd like.
+
+Happy coding!

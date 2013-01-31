@@ -1,30 +1,25 @@
 <div class="maker-info">
   <div class="avatar"><%= image_tag avatar_url(@project.user) %></div>
   <% if current_user.following?(@user) %>
-    <%= form_for(current_user.relationships.find_by_followed_id(@user), method: :delete ) do |f| %>
-      <%= f.submit "Unfollow", class: "button-small" %>
-    <% end %>
+    <%= render "unfollow" %>
+  <% elsif current_user == @user %>
+    <%= link_to "Edit Project", edit_project_path(@project) %><br />
+    <%= link_to "Add step", new_project_step_path(@project) %>
   <% else %>
-    <%= form_for(current_user.relationships.build(followed_id: @user.id)) do |f| %>
-      <%= f.hidden_field :followed_id %>
-      <%= @user.name %><br />
-      <%= f.submit "Follow", class: "button-small" %>
-    <% end %>
+    <%= render "follow" %>
   <% end %>
 </div>
 
-<h1><%= @project.title %></h1>
-<h3><%= @project.description %></h3>
-<%= link_to "Edit Project", edit_project_path(@project) %>
-
-<div class="buff"></div>
-<div class="buff"></div>
-
-<% @project.steps.each do |step| %>
+<div class="project-box">
+  <h1><%= @project.title %></h1>
+  <h3><%= @project.description %></h3>
   <div class="buff"></div>
-  <section>
-    <aside><%= image_tag step.pic.url(:medium) %></aside>
-    <article>
+
+  <% @project.steps.each do |step| %>
+    <div class="step">
+      <div class="step-pic">
+        <%= image_tag step.pic.url(:small) %>
+      </div>
       <div class="step-name"><%= step.name %></div>
       <div class="step-detail"><%= step.detail %></div>
       <div class="step-tip">
@@ -32,20 +27,18 @@
           <%= "Tip: " + step.tip %>
         <% end %>
       </div>
-    </article>
-  </section>
-  <div class="buff"></div>
-<% end %>
+    </div>
+  <% end %>
 
-<% if @user == current_user %>
-  <div class="button-blue">
-    <%= link_to 'Add step', new_project_step_path(@project) %>
-  </div>
-  <div class="buff"></div>
-<% end %>
-<%= form_for([@project, @comment]) do |form| %>
-  <%= form.text_area :body %>
-  <%= form.submit "Comment" %>
-<% end %>
+  <h3>Comments:</h3>
+  <%= render @project.comments %>
 
-<%= render @project.comments %>
+  <%= form_for([@project, @comment]) do |form| %>
+    <div class="field">
+      <%= form.text_area :body %>
+    </div>
+    <div class="comment-button">
+      <%= form.submit "Comment" %>
+    </div>
+  <% end %>
+</div>
