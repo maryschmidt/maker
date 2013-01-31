@@ -10,7 +10,7 @@
 
 <div class="user-projects-box">
   <h1>
-    <%= "You're watching #{pluralize(current_user.followed_projects.count, "Projects")}" %>
+    <%= "You're watching #{pluralize(current_user.followed_projects.count, "Project")}" %>
   </h1>
   <% @projects.each do |project| %>
     <div class="project-image-thumb">
