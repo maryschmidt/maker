@@ -1,10 +1,10 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "mary@apprentice.io"
 
   def welcome_email(user)
     @user = user
     @url  = sign_in_url
-    mail(to: user.email, subject: "Welcome to My Awesome Site")
+    mail(to: user.email, subject: "Welcome!")
   end
 
   def follow_email(user, follower)
