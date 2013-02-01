@@ -2,6 +2,9 @@ FactoryGirl.define do
 
   factory :goal do
     goal "goal"
+    remind_me true
+    frequency "1 week"
+    status false
     user
   end
 
