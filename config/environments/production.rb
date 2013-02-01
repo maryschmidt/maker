@@ -65,5 +65,16 @@ Maker::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.action_mailer.default_url_options = { :host => 'maker.com' }
+  config.action_mailer.default_url_options = { :host => 'http://fathomless-eyrie-5039.herokuapp.com' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address   => "smtp.sendgrid.net",
+    :port      => 587,
+    :domain    => "http://fathomless-eyrie-5039.herokuapp.com",
+    :user_name => ENV["SENDGRID_USERNAME"],
+    :password  => ENV["SENDGRID_PASSWORD"],
+    :authentication => 'plain',
+    :enable_starttls_auto => true
+  }
 end
