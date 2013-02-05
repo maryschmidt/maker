@@ -7,6 +7,7 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'ejs'
 gem 'pg'
 
 
@@ -26,6 +27,8 @@ gem 'jquery-rails'
 gem 'clearance'
 gem 'thin'
 gem 'high_voltage'
+gem 'backbone-support'
+gem 'active_model_serializers'
 gem 'paperclip'
 gem 'formtastic'
 gem 'flutie'
