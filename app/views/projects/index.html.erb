@@ -6,13 +6,6 @@
 <% end %>
 
 <%# <%= paginate @projects %>
-<% @projects.each do |project| %>
-  <% if project.image.exists? %>
-    <%= link_to image_tag(project.image.url(:small)), project %>
-  <% end %>
-<% end %>
-
-<br />
 
 <div class="projects"></div>
 

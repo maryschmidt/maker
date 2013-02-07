@@ -1,5 +1,5 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :title, :description, :dom_id
+  attributes :title, :description, :dom_id, :image, :image_url, :id
 
   def dom_id
     dom_id_manager.dom_id(object)

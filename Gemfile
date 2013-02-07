@@ -24,6 +24,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'js-routes'
 gem 'clearance'
 gem 'thin'
 gem 'high_voltage'

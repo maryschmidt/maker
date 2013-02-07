@@ -1,8 +1,9 @@
 class @Maker.Views.ProjectShow extends Backbone.View
-  tagName: 'article'
+  tagName: 'project'
 
   render: ->
     @$el.template 'projects/show'
     @$el.attr id: @model.domId()
-    @$el.find('h2').text @model.title()
+    @$el.find('a').attr("href", Routes.project_path(@model.project_id()))
+    @$el.find('img').attr("src", @model.image_url())
     @

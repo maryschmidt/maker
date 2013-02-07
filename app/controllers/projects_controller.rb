@@ -1,8 +1,10 @@
 class ProjectsController < ApplicationController
   skip_before_filter :authorize, only: :index
+  respond_to :html, :json
 
   def index
     @projects = Project.all
+    respond_with(@projects)
   end
 
   def show
@@ -10,6 +12,7 @@ class ProjectsController < ApplicationController
     @comment = Comment.new
     @steps = @project.steps
     @user = @project.user
+    respond_with(@project, :methods => [:image_url])
   end
 
   def new
@@ -23,6 +26,7 @@ class ProjectsController < ApplicationController
   def create
     @project = build_project
     @project.save
+    respond_with(@project)
     redirect_to projects_path, notice: "Project was successfully created."
   end
 
