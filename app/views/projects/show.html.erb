@@ -8,15 +8,16 @@
   <%= render "follow" %>
 <% end %>
 
-<section>
-  <aside>
-    <%= image_tag @project.image.url(:medium) %>
-  </aside>
-  <article>
-    <h1><%= @project.title %></h1>
-    <h3><%= @project.description %></h3>
-  </article>
-</section>
+<div class="proj-show">
+  <section>
+    <aside>
+      <%= image_tag @project.image.url(:medium) %>
+    </aside>
+    <article>
+      <h1><%= @project.title %></h1>
+      <h3><%= @project.description %></h3>
+    </article>
+  </section>
 
   <h3>Comments:</h3>
   <%= render @project.comments %>

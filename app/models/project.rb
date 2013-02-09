@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
   has_many :comments
   has_many :steps
 
-  has_attached_file :image, styles: { medium: "300x300>",  small: "200x200#", thumb: "100x100#" }
+  has_attached_file :image, styles: { medium: "350x350>",  small: "200x200#", thumb: "100x100#" }
 
   def image_url
     image.url(:small)

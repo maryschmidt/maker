@@ -16,10 +16,14 @@ textarea {
   height: 100px;
   background-color: $white;
   color: $text;
+  border-color: darken($gray, 10%);
+  border-width: 2px;
+  outline: none;
 }
 
 .comment-button {
   margin-top: 5px;
+  padding-bottom: 15px;
   input {
     @include button($blue);
     text-decoration: none;

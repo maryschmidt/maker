@@ -1,7 +1,10 @@
 section {
   @include outer-container;
-  padding-top: 50px;
-  aside { @include span-columns(6); }
+  margin-top: 50px;
+  padding-top: 15px;
+  aside {
+    @include span-columns(6);
+  }
   article { @include span-columns(6); }
 }
 
@@ -10,4 +13,11 @@ section {
   width: 75%;
   float: left;
   background-color: $gray;
+}
+
+.proj-show {
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: lighten($gray, 5%);
+  @include box-shadow(0 0 2px 2px hsla(0, 0%, 0%, 0.15));
 }
