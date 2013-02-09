@@ -1,33 +1,13 @@
+section {
+  @include outer-container;
+  padding-top: 50px;
+  aside { @include span-columns(6); }
+  article { @include span-columns(6); }
+}
+
 .project-box {
   padding-left: 15px;
   width: 75%;
   float: left;
   background-color: $gray;
-}
-
-.step {
-  width: 100%;
-  min-height: 200px;
-  background-color: $gray;
-  .step-pic {
-    float: left;
-    margin-right: 30px;
-  }
-}
-
-.step-name {
-  font-size: 18px;
-  font-weight: bold;
-  padding-bottom: 15px;
-}
-
-.step-detail {
-  font-size: 16px;
-  padding-bottom: 15px;
-}
-
-.step-tip {
-  font-size: 16px;
-  padding-left: 30px;
-  font-style: italic;
 }
