@@ -3,8 +3,18 @@
   text-align: center;
   font-size: 42px;
   font-weight: bold;
-  padding: 150px;
+  padding: 175px;
+  background-color: lighten($gray, 5%);
+  margin: 0 0 15px 0;
+  @include box-shadow(0 0 2px 2px hsla(0, 0%, 0%, 0.15));
   a {
     color: $blue;
   }
+}
+
+.project-recent {
+  width: 200px;
+  height: 200px;
+  margin-left: -6px;
+  margin-right: 16px;
 }
