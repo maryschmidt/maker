@@ -10,7 +10,18 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require js-routes
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
+//= require underscore
+//= require backbone
+//= require backbone-support
+//= require base
+//= require_tree ../templates
+//= require_tree ./utils
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require_tree .
+
 //= require_tree .

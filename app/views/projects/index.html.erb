@@ -6,10 +6,22 @@
 <% end %>
 
 <%# <%= paginate @projects %>
-<% @projects.each do |project| %>
-  <% if project.image.exists? %>
-    <%= link_to image_tag(project.image.url(:small)), project %>
+
+<div class="projects"></div>
+
+<% content_for :javascript do %>
+  <script type="text/json">
+    {
+      "projects": <%== ActiveModel::ArraySerializer.new(@projects).to_json %>
+    }
+  </script>
+
+  <%= javascript_tag do %>
+    $(function() {
+      var projectsData = <%== ActiveModel::ArraySerializer.new(@projects).to_json %>
+        window.projectsCollection = new Maker.Collections.Projects(projectsData);
+
+      new Maker.Views.ProjectsShow({ projects: projectsCollection, el: $('.projects') }).render();
+    });
   <% end %>
 <% end %>
-
-<br />

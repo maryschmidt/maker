@@ -1,0 +1,4 @@
+@Maker =
+  Models: {}
+  Views: {}
+  Collections: {}

@@ -7,6 +7,10 @@ class Project < ActiveRecord::Base
 
   has_attached_file :image, styles: { medium: "300x300>",  small: "200x200#", thumb: "100x100#" }
 
+  def image_url
+    image.url(:small)
+  end
+
   def self.recent(count)
     order("updated_at DESC").limit(count)
   end

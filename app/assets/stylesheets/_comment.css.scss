@@ -11,6 +11,13 @@
   }
 }
 
+textarea {
+  width: 75%;
+  height: 100px;
+  background-color: $white;
+  color: $text;
+}
+
 .comment-button {
   margin-top: 5px;
   input {

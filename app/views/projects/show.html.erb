@@ -1,40 +1,28 @@
-<div class="maker-info">
-  <div class="avatar"><%= image_tag avatar_url(@project.user) %></div>
-  <% if current_user.following?(@user) %>
-    <%= render "unfollow" %>
-  <% elsif current_user == @user %>
-    <%= link_to "Edit Project", edit_project_path(@project) %><br />
-    <%= link_to "Add step", new_project_step_path(@project) %>
-  <% else %>
-    <%= render "follow" %>
-  <% end %>
-</div>
+<div class="avatar"><%= image_tag avatar_url(@project.user) %></div>
+<% if current_user.following?(@user) %>
+  <%= render "unfollow" %>
+<% elsif current_user == @user %>
+  <%= link_to "Edit Project", edit_project_path(@project) %><br />
+  <%= link_to "Add step", new_project_step_path(@project) %>
+<% else %>
+  <%= render "follow" %>
+<% end %>
 
-<div class="project-box">
-  <h1><%= @project.title %></h1>
-  <h3><%= @project.description %></h3>
-  <div class="buff"></div>
-
-  <% @project.steps.each do |step| %>
-    <div class="step">
-      <div class="step-pic">
-        <%= image_tag step.pic.url(:small) %>
-      </div>
-      <div class="step-name"><%= step.name %></div>
-      <div class="step-detail"><%= step.detail %></div>
-      <div class="step-tip">
-        <% unless step.tip.empty? %>
-          <%= "Tip: " + step.tip %>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
+<section>
+  <aside>
+    <%= image_tag @project.image.url(:medium) %>
+  </aside>
+  <article>
+    <h1><%= @project.title %></h1>
+    <h3><%= @project.description %></h3>
+  </article>
+</section>
 
   <h3>Comments:</h3>
   <%= render @project.comments %>
 
   <%= form_for([@project, @comment]) do |form| %>
-    <div class="field">
+    <div class="text-area">
       <%= form.text_area :body %>
     </div>
     <div class="comment-button">
