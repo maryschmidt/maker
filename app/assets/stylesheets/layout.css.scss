@@ -60,6 +60,25 @@ a {
   }
 }
 
+.dark-link {
+  a {
+    color: $text;
+    padding: 0.3em;
+    font-weight: bold;
+    &:link {
+      text-decoration: none;
+      color: $text;
+    }
+    &:visited {
+      color: $text;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $text;
+    }
+  }
+}
+
 .field {
   margin-top: 5px;
   input {
@@ -167,4 +186,10 @@ a {
 .buff-white {
   background-color: $white;
   height: 20px;
+}
+
+.avatar img {
+  float: left;
+  margin-right: 15px;
+  width: 48px;
 }

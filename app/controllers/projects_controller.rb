@@ -27,13 +27,12 @@ class ProjectsController < ApplicationController
     @project = build_project
     @project.save
     respond_with(@project)
-    redirect_to projects_path, notice: "Project was successfully created."
   end
 
   def update
     @project = current_project
     @project.update_attributes(params[:project])
-    redirect_to projects_path, notice: "Project was successfully updated."
+    respond_with(@project)
   end
 
   def destroy
