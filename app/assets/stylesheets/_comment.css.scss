@@ -4,7 +4,10 @@
   margin-bottom: 30px;
   .avatar {
     float: left;
-    padding-right: 5px;
+    // padding-right: 5px;
+    a img {
+      width: 48px;
+    }
   }
   .time {
     font-style: italic;

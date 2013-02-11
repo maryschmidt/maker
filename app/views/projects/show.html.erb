@@ -2,8 +2,10 @@
 <% if current_user.following?(@user) %>
   <%= render "unfollow" %>
 <% elsif current_user == @user %>
-  <%= link_to "Edit Project", edit_project_path(@project) %><br />
-  <%= link_to "Add step", new_project_step_path(@project) %>
+  <div class="dark-link">
+    <%= link_to "Edit Project", edit_project_path(@project) %><br />
+    <%= link_to "Add step", new_project_step_path(@project) %>
+  </div>
 <% else %>
   <%= render "follow" %>
 <% end %>
