@@ -19,8 +19,10 @@
   <%= form.text_field :description %><br />
 </div>
 <div class="field">
-  <%= form.label "Image" %>
-  <%= form.file_field :image %><br />
+  <%= form.fields_for :assets do |assets_form| %>
+    <%= assets_form.label :image %>
+    <%= assets_form.file_field :image %>
+  <% end %>
 </div>
 <div class="actions">
   <%= form.submit %>

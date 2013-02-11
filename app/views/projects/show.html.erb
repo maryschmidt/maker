@@ -1,22 +1,28 @@
-<div class="avatar"><%= image_tag avatar_url(@project.user) %></div>
 <% if current_user.following?(@user) %>
+  <div class="avatar"><%= image_tag avatar_url(@project.user) %></div>
   <%= render "unfollow" %>
 <% elsif current_user == @user %>
-  <div class="dark-link">
-    <%= link_to "Edit Project", edit_project_path(@project) %><br />
-    <%= link_to "Add step", new_project_step_path(@project) %>
-  </div>
+  <div></div>
 <% else %>
+  <div class="avatar"><%= image_tag avatar_url(@project.user) %></div>
   <%= render "follow" %>
 <% end %>
+<br />
 
 <div class="proj-show">
   <section>
     <aside>
-      <%= image_tag @project.image.url(:medium) %>
+      <% if @project.assets.any? %>
+        <%= image_tag @project.image.url(:medium) %>
+      <% end %>
     </aside>
     <article>
-      <h1><%= @project.title %></h1>
+      <h1>
+        <%= @project.title %>
+        <% if current_user == @user %>
+          <%= link_to image_tag("/gear.png", width: 24), edit_project_path(@project) %>
+        <% end %>
+      </h1>
       <h3><%= @project.description %></h3>
     </article>
   </section>

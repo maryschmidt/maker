@@ -14,13 +14,6 @@ FactoryGirl.define do
     user
   end
 
-  factory :step do
-    name "name"
-    detail "detail"
-    tip "tip"
-    project
-  end
-
   factory :comment do
     body "Hello"
     user

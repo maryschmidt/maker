@@ -1,14 +1,18 @@
 class Project < ActiveRecord::Base
-  attr_accessible :description, :title, :image
+  attr_accessible :description, :title, :assets_attributes
 
   belongs_to :user
+  has_many :assets
   has_many :comments
-  has_many :steps
 
-  has_attached_file :image, styles: { medium: "350x350>",  small: "200x200#", thumb: "100x100#" }
+  accepts_nested_attributes_for :assets, allow_destroy: true
+
+  def image
+    assets.first.image
+  end
 
   def image_url
-    image.url(:small)
+    assets.first.image.url(:small)
   end
 
   def self.recent(count)
