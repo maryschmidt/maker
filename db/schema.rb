@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131182812) do
+ActiveRecord::Schema.define(:version => 20130211164459) do
+
+  create_table "assets", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "project_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
 
   create_table "comments", :force => true do |t|
     t.string   "body",       :null => false
@@ -39,13 +49,9 @@ ActiveRecord::Schema.define(:version => 20130131182812) do
   create_table "projects", :force => true do |t|
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "user_id"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
@@ -60,23 +66,6 @@ ActiveRecord::Schema.define(:version => 20130131182812) do
   add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
-
-  create_table "steps", :force => true do |t|
-    t.string   "name"
-    t.string   "detail"
-    t.string   "tip"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.integer  "project_id"
-    t.string   "pic_file_name"
-    t.string   "pic_content_type"
-    t.integer  "pic_file_size"
-    t.datetime "pic_updated_at"
-    t.integer  "user_id"
-  end
-
-  add_index "steps", ["project_id"], :name => "index_steps_on_project_id"
-  add_index "steps", ["user_id"], :name => "index_steps_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

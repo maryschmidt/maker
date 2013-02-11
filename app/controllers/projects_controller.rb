@@ -10,13 +10,13 @@ class ProjectsController < ApplicationController
   def show
     @project = current_project
     @comment = Comment.new
-    @steps = @project.steps
     @user = @project.user
-    respond_with(@project, :methods => [:image_url])
+    respond_with(@project, :methods => [:image, :image_url])
   end
 
   def new
     @project = Project.new
+    @project.assets.build
   end
 
   def edit

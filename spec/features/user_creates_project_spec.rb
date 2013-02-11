@@ -4,7 +4,7 @@ feature "user creates a project" do
   scenario "successful creation" do
     navigate_to_dashboard
     make_project
-    expect(page).to have_content("Project was successfully created")
+    expect(page).to have_content("Test Project")
   end
 
   def navigate_to_dashboard

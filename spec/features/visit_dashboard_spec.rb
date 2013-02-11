@@ -25,9 +25,9 @@ feature "Dashboard" do
     end
 
     def visible?
-      within ".user-projects-box" do
+      # within ".user-projects-box" do
         page.has_text?("You're watching 1")
-      end
+      # end
     end
   end
 end
