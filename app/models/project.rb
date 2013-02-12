@@ -8,7 +8,11 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :assets, allow_destroy: true
 
   def image
-    assets.first.image
+    if assets.any?
+      assets.first.image
+    else
+      Asset.new.image
+    end
   end
 
   def image_url
