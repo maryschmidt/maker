@@ -16,7 +16,11 @@ class Project < ActiveRecord::Base
   end
 
   def image_url
-    assets.first.image.url(:small)
+    if assets.any?
+      assets.first.image.url(:small)
+    else
+      Asset.new.image
+    end
   end
 
   def self.recent(count)
