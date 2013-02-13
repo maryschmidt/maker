@@ -16,7 +16,7 @@
 
   <%= javascript_tag do %>
     $(function() {
-      new Maker.Routers.ProjectsRouter();
+      projectsRouter = new Maker.Routers.ProjectsRouter();
       Backbone.history.start({
         pushState: false,
         root: '/projects/'

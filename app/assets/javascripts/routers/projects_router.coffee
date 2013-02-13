@@ -1,7 +1,7 @@
 class @Maker.Routers.ProjectsRouter extends Backbone.Router
   routes:
-    "" : "indexProjects"
-    # "new": "newProject"
+    ""    : "indexProjects"
+    "/new" : "newProject"
 
   indexProjects: ->
     projectsData = Maker.bootstrap('projects')
@@ -9,6 +9,6 @@ class @Maker.Routers.ProjectsRouter extends Backbone.Router
     projects = new Maker.Views.ProjectsShow({ projects: projectsCollection, el: $('.projects') })
     projects.render()
 
-  # newProject ->
-    # form = new Maker.Views.ProjectNewView()
-    # form.render()
+  newProject: ->
+    form = new Maker.Views.ProjectNewView()
+    form.render()

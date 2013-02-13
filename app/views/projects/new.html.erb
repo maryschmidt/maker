@@ -1,9 +1,6 @@
-<div class="center_box">
-  <h1>New Project</h1>
-  <%= form_for @project do |f| %>
-    <%= render f %>
+<% content_for :javascript do %>
+  <%= javascript_tag do %>
+    $(function() {
+    });
   <% end %>
-  <div class="button">
-    <%= link_to "Back", projects_path %>
-  </div>
-</div>
+<% end %>
