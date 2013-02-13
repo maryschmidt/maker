@@ -10,18 +10,17 @@
 <div class="projects"></div>
 
 <% content_for :javascript do %>
-  <script type="text/json">
-    {
-      "projects": <%== ActiveModel::ArraySerializer.new(@projects).to_json %>
-    }
+  <script type="text/json" id="bootstrap">
+    { "projects": <%== ActiveModel::ArraySerializer.new(@projects).to_json %> }
   </script>
 
   <%= javascript_tag do %>
     $(function() {
-      var projectsData = <%== ActiveModel::ArraySerializer.new(@projects).to_json %>
-        window.projectsCollection = new Maker.Collections.Projects(projectsData);
-
-      new Maker.Views.ProjectsShow({ projects: projectsCollection, el: $('.projects') }).render();
+      new Maker.Routers.ProjectsRouter();
+      Backbone.history.start({
+        pushState: false,
+        root: '/projects/'
+      });
     });
   <% end %>
 <% end %>
