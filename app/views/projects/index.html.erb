@@ -16,11 +16,11 @@
 
   <%= javascript_tag do %>
     $(function() {
-      var projectsData = Maker.bootstrap('projects'),
-        router = new Maker.Routers.Router(),
-        projectsCollection = new Maker.Collections.Projects(projectsData);
-
-      new Maker.Views.ProjectsShow({ projects: projectsCollection, el: $('.projects') }).render();
+      new Maker.Routers.ProjectsRouter();
+      Backbone.history.start({
+        pushState: false,
+        root: '/projects/'
+      });
     });
   <% end %>
 <% end %>
