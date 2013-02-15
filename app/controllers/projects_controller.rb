@@ -26,7 +26,7 @@ class ProjectsController < ApplicationController
   def create
     @project = build_project
     @project.save
-    respond_with(@project)
+    respond_with @project
   end
 
   def update
