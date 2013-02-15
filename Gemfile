@@ -37,6 +37,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'airbrake'
 gem 'kaminari'
+gem 'aws-sdk'
 
 group :development do
   gem 'foreman'
