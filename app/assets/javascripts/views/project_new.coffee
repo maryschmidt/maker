@@ -11,8 +11,7 @@ class @Maker.Views.ProjectNew extends Backbone.View
 
   submit: ->
     attributes = new FormAttributes(@$('form')).attributes()
-    console.log attributes
     self = @
     project = new Maker.Models.Project(attributes).save()
 
-    return false
+    remove()
